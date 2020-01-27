@@ -12,6 +12,11 @@ import (
 )
 
 func main() {
+	flag.Parse()
+
+	log.Println("Target:", flag.Arg(0))
+	log.Println("Server:", flag.Arg(1))
+
 	target, err := url.Parse(flag.Arg(0))
 	if err != nil {
 		log.Fatal(err)
